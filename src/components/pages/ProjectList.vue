@@ -86,9 +86,9 @@ export default {
 
     async fetchDataList() {
       try {
-        const databaseResponse = await axios.get('http://localhost:3000/database');
+        const databaseResponse = await axios.get('https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/database');
         this.dataList = databaseResponse.data;
-        const notifikasiResponse = await axios.get('http://localhost:3000/notifikasi');
+        const notifikasiResponse = await axios.get('https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/notifikasi');
         this.notifikasiList = notifikasiResponse.data.map(n => n.id);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -111,17 +111,17 @@ export default {
       }).then(async (result) => {
         if (result.isConfirmed) {
           try {
-            const response = await axios.get(`http://localhost:3000/database/${id}`);
+            const response = await axios.get(`https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/database/${id}`);
             const { namabarang, jumlahbarang } = response.data;
-            const barangResponse = await axios.get('http://localhost:3000/users');
+            const barangResponse = await axios.get('https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/users');
             const barang = barangResponse.data.find(b => b.barang === namabarang);
             if (barang) {
-              await axios.put(`http://localhost:3000/users/${barang.id}`, {
+              await axios.put(`https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/users/${barang.id}`, {
                 ...barang,
                 stok: barang.stok + jumlahbarang,
               });
             }
-            await axios.delete(`http://localhost:3000/database/${id}`);
+            await axios.delete(`https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/database/${id}`);
             Swal.fire({ icon: 'success', title: 'Data berhasil dihapus!', timer: 1500 });
             this.fetchDataList();
           } catch (error) {

@@ -48,7 +48,7 @@
     methods: {
       async fetchNotifications() {
   try {
-    const { data } = await axios.get('http://localhost:3000/notifikasi');
+    const { data } = await axios.get('https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/notifikasi');
     console.log(data); // Periksa struktur data yang diterima
 
     this.notifications = data.filter(item => item.status !== 'Dikembalikan');
@@ -72,18 +72,18 @@ async removeNotification(notif, index) {
     if (!confirm.isConfirmed) return;
 
     // 1️⃣ Ambil data barang dari database untuk mendapatkan tanggal dipinjam
-    const { data: dbData } = await axios.get(`http://localhost:3000/database/${notif.id}`);
+    const { data: dbData } = await axios.get(`https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/database/${notif.id}`);
     if (!dbData) throw new Error("Data barang tidak ditemukan di database");
 
     // 2️⃣ Ambil data stok barang dari /users
-    const { data: users } = await axios.get(`http://localhost:3000/users?barang=${notif.namabarang}`);
+    const { data: users } = await axios.get(`https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/users?barang=${notif.namabarang}`);
     if (!users.length) throw new Error("Barang tidak ditemukan di users");
 
     const userData = users[0];
     const updatedStock = userData.stok + notif.jumlahbarang; // Tambahkan stok kembali
 
     // 3️⃣ Simpan ke riwayat
-    await axios.post('http://localhost:3000/riwayat', {
+    await axios.post('https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/riwayat', {
       id: notif.id,
       nama: notif.nama,
       kelas: notif.kelas,
@@ -95,13 +95,13 @@ async removeNotification(notif, index) {
     });
 
     // 4️⃣ Update stok barang di /users
-    await axios.patch(`http://localhost:3000/users/${userData.id}`, { stok: updatedStock });
+    await axios.patch(`https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/users/${userData.id}`, { stok: updatedStock });
 
     // 5️⃣ Hapus data dari /notifikasi
-    await axios.delete(`http://localhost:3000/notifikasi/${notif.id}`);
+    await axios.delete(`https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/notifikasi/${notif.id}`);
 
     // 6️⃣ Hapus data dari /database
-    await axios.delete(`http://localhost:3000/database/${notif.id}`);
+    await axios.delete(`https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/database/${notif.id}`);
 
     // 7️⃣ Perbarui daftar notifikasi
     this.notifications.splice(index, 1);

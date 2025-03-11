@@ -47,7 +47,7 @@ export default {
     
     const fetchItems = async () => {
       try {
-        const response = await fetch("http://localhost:3000/users");
+        const response = await fetch("https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/users");
         if (response.ok) {
           items.value = await response.json();
         }
@@ -79,7 +79,7 @@ export default {
 
     const deleteItem = async (itemId) => {
       try {
-        const response = await fetch(`http://localhost:3000/users/${itemId}`, {
+        const response = await fetch(`https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/users/${itemId}`, {
           method: "DELETE",
         });
         if (response.ok) {

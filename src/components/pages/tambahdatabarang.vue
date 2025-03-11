@@ -40,7 +40,7 @@
   
       const fetchLastId = async () => {
         try {
-          const response = await fetch("http://localhost:3000/users");
+          const response = await fetch("https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/users");
           if (response.ok) {
             const data = await response.json();
             const lastId = data.length > 0 ? parseInt(data[data.length - 1].id) + 1 : 1;
@@ -80,7 +80,7 @@
         };
   
         try {
-          const response = await fetch("http://localhost:3000/users", {
+          const response = await fetch("https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/users", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data),

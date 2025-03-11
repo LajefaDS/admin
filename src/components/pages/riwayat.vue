@@ -62,7 +62,7 @@ export default {
     async fetchRiwayat() {
       try {
         // Ambil data dari API /riwayat
-        const { data } = await axios.get('http://localhost:3000/riwayat');
+        const { data } = await axios.get('https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/riwayat');
         
         // Debugging: Menampilkan data di console
         console.log("Data dari API:", data);

@@ -45,7 +45,7 @@
       async fetchData() {
         const id = this.$route.params.id;
         try {
-          const response = await axios.get(`http://localhost:3000/users/${id}`);
+          const response = await axios.get(`https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/users/${id}`);
           this.form = response.data;
         } catch (error) {
           console.error('Error fetching data:', error);
@@ -54,7 +54,7 @@
       async updateData() {
         const id = this.$route.params.id;
         try {
-          await axios.put(`http://localhost:3000/users/${id}`, this.form);
+          await axios.put(`https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/users/${id}`, this.form);
           Swal.fire({ icon: 'success', title: 'Data berhasil diperbarui!', timer: 1500 });
           this.$router.push('/databarang');
         } catch (error) {

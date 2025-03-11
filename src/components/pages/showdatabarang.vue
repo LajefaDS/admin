@@ -44,7 +44,7 @@
       async fetchData() {
         const id = this.$route.params.id;
         try {
-          const response = await axios.get(`http://localhost:3000/users/${id}`);
+          const response = await axios.get(`https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/users/${id}`);
           this.data = response.data;
         } catch (error) {
           console.error('Error fetching data:', error);
