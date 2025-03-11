@@ -1,0 +1,75 @@
+{
+  "users": [
+    {
+      "id": "0",
+      "barang": "Im Focus",
+      "stok": 14
+    },
+    {
+      "id": "1",
+      "barang": "Roll Kabel",
+      "stok": 14
+    },
+    {
+      "id": "2",
+      "barang": "Keyboard Sekolah",
+      "stok": 13
+    },
+    {
+      "id": "3",
+      "barang": "Kabel HDMI",
+      "stok": 14
+    }
+  ],
+  "database": [
+    {
+      "id": "fa23",
+      "nama": "Nama",
+      "kelas": "Kelas",
+      "namabarang": "Im Focus",
+      "jumlahbarang": 1,
+      "tanggal": "10-03-2025, 21.30.37"
+    },
+    {
+      "id": "ceab",
+      "nama": "nama",
+      "kelas": "kelas",
+      "namabarang": "Keyboard Sekolah",
+      "jumlahbarang": 1,
+      "tanggal": "10-03-2025, 21.40.35",
+      "kembali": true
+    }
+  ],
+  "notifikasi": [
+    {
+      "id": "ceab",
+      "nama": "nama",
+      "kelas": "kelas",
+      "namabarang": "Keyboard Sekolah",
+      "jumlahbarang": 1,
+      "tanggalKembali": "10-03-2025, 21.44.23"
+    }
+  ],
+  "riwayat": [
+    {
+      "id": "766f",
+      "nama": "Orang",
+      "kelas": "XII",
+      "namabarang": "Keyboard Sekolah",
+      "jumlahbarang": 1,
+      "tanggalDipinjam": "10-03-2025, 21.29.21",
+      "tanggalDikembalikan": "10-03-2025, 21.29.32",
+      "status": "Dikembalikan"
+    },
+    {
+      "id": "a35a",
+      "nama": "orang",
+      "kelas": "12",
+      "namabarang": "Roll Kabel",
+      "jumlahbarang": 2,
+      "tanggalDipinjam": "10-03-2025, 21.29.50",
+      "tanggalDikembalikan": "10-03-2025, 21.30.51",
+      "status": "Dikembalikan"
+    }
+  ]
+}
