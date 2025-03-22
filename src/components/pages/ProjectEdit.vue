@@ -65,7 +65,7 @@ export default {
     async fetchData() {
       const id = this.$route.params.id;
       try {
-        const response = await axios.get(`https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/database/${id}`);
+        const response = await axios.get(`https://29b1ef8a-9650-4e93-aae4-c5dd204ed3f4-00-29uckvoxpfzx3.sisko.replit.dev/database/${id}`);
         this.form = response.data;
         this.oldJumlah = response.data.jumlahbarang;
         this.oldNamabarang = response.data.namabarang;
@@ -76,7 +76,7 @@ export default {
     },
     async fetchBarangList() {
       try {
-        const response = await axios.get('https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/users');
+        const response = await axios.get('https://29b1ef8a-9650-4e93-aae4-c5dd204ed3f4-00-29uckvoxpfzx3.sisko.replit.dev/users');
         this.barangList = response.data;
       } catch (error) {
         console.error('Error fetching barang list:', error);
@@ -107,7 +107,7 @@ export default {
   try {
     // 1️⃣ Jika nama barang berubah, kembalikan stok barang lama
     if (this.oldNamabarang !== this.form.namabarang && barangLama) {
-      await axios.put(`https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/users/${barangLama.id}`, {
+      await axios.put(`https://29b1ef8a-9650-4e93-aae4-c5dd204ed3f4-00-29uckvoxpfzx3.sisko.replit.dev/users/${barangLama.id}`, {
         ...barangLama,
         stok: barangLama.stok + this.oldJumlah, // Kembalikan stok barang lama sepenuhnya
       });
@@ -123,7 +123,7 @@ export default {
       }
 
       // Update stok hanya jika jumlahnya berubah
-      await axios.put(`https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/users/${barangBaru.id}`, {
+      await axios.put(`https://29b1ef8a-9650-4e93-aae4-c5dd204ed3f4-00-29uckvoxpfzx3.sisko.replit.dev/users/${barangBaru.id}`, {
         ...barangBaru,
         stok: barangBaru.stok - selisih, // Kurangi atau tambahkan stok sesuai perubahan jumlah
       });
@@ -136,14 +136,14 @@ export default {
         return;
       }
 
-      await axios.put(`https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/users/${barangBaru.id}`, {
+      await axios.put(`https://29b1ef8a-9650-4e93-aae4-c5dd204ed3f4-00-29uckvoxpfzx3.sisko.replit.dev/users/${barangBaru.id}`, {
         ...barangBaru,
         stok: barangBaru.stok - this.form.jumlahbarang, // Kurangi stok dengan jumlah baru
       });
     }
 
     // 4️⃣ Update data peminjaman
-    await axios.put(`https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/database/${id}`, this.form);
+    await axios.put(`https://29b1ef8a-9650-4e93-aae4-c5dd204ed3f4-00-29uckvoxpfzx3.sisko.replit.dev/database/${id}`, this.form);
 
     Swal.fire({ icon: 'success', title: 'Data updated successfully!', timer: 1500 });
     this.$router.push('/list');

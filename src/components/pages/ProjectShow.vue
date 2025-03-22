@@ -52,7 +52,7 @@ export default {
     async fetchData() {
       const id = this.$route.params.id;
       try {
-        const response = await axios.get(`https://7a6bc215-6459-47b1-8792-ea59bd0c1918-00-30ru3bjcoagn1.sisko.replit.dev/database/${id}`);
+        const response = await axios.get(`https://29b1ef8a-9650-4e93-aae4-c5dd204ed3f4-00-29uckvoxpfzx3.sisko.replit.dev/database/${id}`);
         this.data = response.data;
       } catch (error) {
         console.error('Error fetching data:', error);
