@@ -6,15 +6,15 @@
           <div class="card-body">
             <table class="table table-bordered">
               <tr>
-                <th>Nama</th>
+                <th>ID</th>
                 <td>{{ data.id }}</td>
               </tr>
               <tr>
-                <th>Kelas</th>
+                <th>Nama Barang</th>
                 <td>{{ data.barang }}</td>
               </tr>
               <tr>
-                <th>Nama Barang</th>
+                <th>Stok</th>
                 <td>{{ data.stok }}</td>
               </tr>
             </table>
