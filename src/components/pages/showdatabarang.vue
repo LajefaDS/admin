@@ -1,7 +1,7 @@
 <template>
     <layout-div>
       <div class="container">
-        <h2 class="text-center mb-3">Detail Peminjaman</h2>
+        <h2 class="text-center mb-3">Detail Data Barang</h2>
         <div class="card">
           <div class="card-body">
             <table class="table table-bordered">
